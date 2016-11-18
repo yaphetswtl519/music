@@ -1,0 +1,251 @@
+p, h1, h2, h3, h4, div, a {
+	color: #000;
+	font: 14px/20px Helvetica,sans-serif,arial;
+	margin: 0;
+}
+ul, li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+html,
+body {
+	margin: 0;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+.content-wrap {
+	width: 100%;
+	height: 100%;
+	max-width: 600px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	margin: 0 auto;
+}
+.content-wrap .content {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	padding-top: 60px;
+	box-sizing: border-box;
+}
+.song-img {
+	width: 50%;
+	height: 0;
+	padding-bottom: 50%;
+	position: relative;
+	background-color: #ccc;
+	margin: 0 auto;
+}
+.song-img .img-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+.song-img .img-wrap img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+.song-info {
+	height: 126px;
+	text-align: center;
+	margin-top: 30px;
+}
+.song-info h1 {
+	font-size: 24px;
+	color: rgba(255, 255, 255, 0.86);
+	line-height: 36px;
+	margin-bottom: 8px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.song-info h3 {
+	color: rgba(255, 255, 255, 0.6);
+	margin-bottom: 6px;
+	font-size: 12px;
+	line-height: 16px;
+}
+.play-area {
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	display: flex;
+	margin-top: 10px;
+}
+.play-area .cur-time,
+.play-area .all-time {
+	display: block;
+	width: 60px;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.86);
+}
+.play-area .pro-wrap {
+	flex: 1; 
+	position: relative;
+	overflow: hidden;
+	padding-left: 5px;
+}
+.play-area .pro-bottom {
+	width: 100%;
+	height: 1px;
+	position: absolute;
+	top: 20px;
+	background-color: rgba(255, 255, 255, 0.6);
+}
+.play-area .pro-top	{
+	height: 1px;
+	background-color: #fff;
+	z-index: 100;
+	transform: translateX(-100%);
+}
+.play-area .pro-top .slide-point {
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	right: -10px;
+	top: -10px;
+}
+.play-area .pro-top .slide-point::after {
+	content: '';
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: #fff;
+	top: 8px;
+	left: 6px;
+}
+.play-control {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+}
+.play-control .btn-wrap {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.play-control .btn-wrap span {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.play-control .btn-wrap .like-btn {
+	background-image: url(../img/icon-like.png?__inlint);
+}
+.play-control .btn-wrap .like-btn.disabled {
+	background-image: url(../img/icon-like-solid.png?__inlint);
+}
+.play-control .btn-wrap .prev-btn {
+	background-image: url(../img/icon-prev.png?__inlint);
+}
+.play-control .btn-wrap .play-btn {
+	background-image: url(../img/icon-play.png?__inlint);
+}
+.play-control .btn-wrap .play-btn.playing {
+	background-image: url(../img/icon-pause.png?__inlint);
+}
+.play-control .btn-wrap .next-btn {
+	background-image: url(../img/icon-next.png?__inlint);
+}
+.play-control .btn-wrap .list-btn {
+	background-image: url(../img/icon-list.png?__inlint);
+}
+.play-list {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;;
+    transition: transform 200ms ease-in;
+    -webkit-transition: transform 200ms ease-in;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -webkit-tap-highlight-color: transparent;
+    .list-head,
+    .close-btn {
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: rgba(0, 0, 0, .86);
+        font-size: 16px;
+    }
+    .close-btn {
+        border-top: 1px solid rgba(0, 0, 0, .1);
+    }
+    li {
+        height: 20px;
+        padding: 10px 10px;
+        border-top: 1px solid rgba(0, 0, 0, .1);
+        h3 {
+            line-height: 20px;
+            color: rgba(0, 0, 0, .86);
+            span {
+                font-size: 12px;
+                color: rgba(0, 0, 0, .6);
+            }
+        }
+        &.playing {
+            h3 {
+                color: rgba(255, 0, 0, .86);
+            }
+            span {
+                color: rgba(255, 0, 0, .6);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
